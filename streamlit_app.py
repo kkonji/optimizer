@@ -40,7 +40,7 @@ def home():
     chimae_cond3 = chimae_cond&chimae_cond2
     job_cond3 = job_cond&job_cond2
 
-    if st.button("실행"):
+    if st.sidebar.button("실행"):
         dolbom[dolbom_cond3].to_csv("./tempor/dolbom.csv")
         chimae[chimae_cond3].to_csv("./tempor/chimae.csv")
         job[job_cond3].to_csv("./tempor/job.csv")
