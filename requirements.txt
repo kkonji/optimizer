@@ -1,3 +1,6 @@
 pandas
+matplotlib
+numpy
 folium==0.12.1.post1
+streamlit
 streamlit_folium==0.6.13
