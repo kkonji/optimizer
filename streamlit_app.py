@@ -113,7 +113,7 @@ def info():
 
 # 노인맞춤돌봄서비스 수행기관현황
 def dolbom_ft():
-    st.markdown("#### 노인맞춤돌봄서비스 수행기관")
+    st.markdown("#### 노인 맞춤 돌봄서비스 수행기관")
     df = pd.read_csv("./tempor/dolbom.csv", index_col=0)
     st.dataframe(df)
     if len(df) != 0:
@@ -122,7 +122,7 @@ def dolbom_ft():
 
 # 전국치매센터 현황
 def chimae_ft():
-    st.markdown("#### 전국 치매센터 표준데이터")
+    st.markdown("#### 치매센터 정보")
     df = pd.read_csv("./tempor/chimae.csv", index_col=0)
     st.dataframe(df)
     if len(df) != 0:
@@ -131,23 +131,26 @@ def chimae_ft():
 
 # 노인일자리 현황
 def job_ft():
-    st.markdown("#### 노인 일자리 정보")
+    st.markdown("#### 일자리 정보")
     df = pd.read_csv("./tempor/job.csv", index_col=0)
     st.dataframe(df)
     
 
 # 건강증진센터 현황
 def health_ft():
-    st.markdown('#### 건강증진센터 정보')
+    st.markdown('#### 건강 증진센터 정보')
     df = pd.read_csv("./tempor/health.csv", index_col=0)
-    st.dataframe(df)
-    if len(df) != 0:
-        location_detail(df)
+    li = df["건강증진센터구분"].unique().tolist()
+    box = st.selectbox('구분 선택: ', li)
+    cond = df["건강증진센터구분"] == box
+    st.dataframe(df[cond])
+    if len(df[cond]) != 0:
+        location_detail(df[cond])
 
 
 # 노인보호기관 현황
 def protect_ft():
-    st.markdown('#### 노인보호기관 정보')
+    st.markdown('#### 보호기관 정보')
     df = pd.read_csv("./tempor/protect.csv", index_col=0)
     st.dataframe(df)
     if len(df) != 0:
@@ -156,7 +159,7 @@ def protect_ft():
 
 # 노인복지시설 현황
 def welfare_ft():
-    st.markdown('#### 노인복지시설 정보')
+    st.markdown('#### 복지시설 정보')
     df = pd.read_csv("./tempor/welfare.csv", index_col=0)
     st.dataframe(df)
 
@@ -181,24 +184,24 @@ def digital_ft():
 # 메인 화면
 
 home()
-page = st.sidebar.selectbox('페이지 선택: ', ['복지정보','노인맞춤돌봄서비스', '전국치매센터', '노인일자리', '건강증진센터', '노인보호기관', '노인복지시설', '디지털배움터', '여가및문화생활'])
-if page == '복지정보':
+page = st.sidebar.selectbox('페이지 선택: ', ['복지 정보','노인 맞춤 돌봄서비스', '전국 치매센터', '일자리', '건강 증진센터', '보호기관', '복지시설', '디지털 배움터', '여가 및 문화생활'])
+if page == '복지 정보':
     info()
-elif page == '노인맞춤돌봄서비스':
+elif page == '노인 맞춤 돌봄서비스':
     dolbom_ft()
-elif page == '전국치매센터':
+elif page == '전국 치매센터':
     chimae_ft()
-elif page == '노인일자리':
+elif page == '일자리':
     job_ft()
-elif page == '건강증진센터':
+elif page == '건강 증진센터':
     health_ft()
-elif page == '노인보호기관':
+elif page == '보호기관':
     protect_ft()
-elif page == '노인복지시설':
+elif page == '복지시설':
     welfare_ft()
-elif page == '디지털배움터':
+elif page == '디지털 배움터':
     digital_ft()
-elif page == '여가및문화생활':
+elif page == '여가 및 문화생활':
     leisure_ft()
 
 
