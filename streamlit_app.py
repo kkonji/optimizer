@@ -7,7 +7,7 @@ st.title('시니어 프렌드!!!')
 
 st.header('This is header')
 
-
+print(st.__version__)
 # st.balloons()
 # 데이터 받아오기
 tab1, tab2, tab3 = st.tabs(['ex1', 'ex2', 'ex3'])
