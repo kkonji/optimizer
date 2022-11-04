@@ -49,7 +49,4 @@ with tab1:
         st.dataframe(job[job_cond3])
 
 with tab2:
-    # map = folium.Map(location=[37,126], zoom_start=6)
-    # st_map = st_folium(map, width=700, height=450)
-
     st.pydeck_chart()
