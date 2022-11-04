@@ -8,7 +8,7 @@ st.set_page_config(layout='wide')
 # 타이틀
 st.title('시니어 프렌드')
 # 헤더
-st.header('This is header')
+st.header('고령자 복지 및 생활 정보 서비스')
 
 
 
