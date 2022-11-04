@@ -2,7 +2,7 @@
 import streamlit as st
 import pandas as pd
 
-st.title('시니어 프렌드')
+st.title('시니어 프렌드!!!')
 
 st.header('This is header')
 
