@@ -1,6 +1,8 @@
 # python -m streamlit run c:\Users\USER\Desktop\optimizer\stream.py
 import streamlit as st
 import pandas as pd
+import folium
+from streamlit_folium import st_folium
 
 st.title('시니어 프렌드!!!')
 
@@ -47,3 +49,6 @@ with tab1:
         st.markdown("#### 노인 일자리 정보")
         st.dataframe(job[job_cond3])
 
+with tab2:
+    map = folium.Map()
+    st_map = st_folium(map)
