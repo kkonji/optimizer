@@ -20,7 +20,7 @@ health = pd.read_csv("./data/지역별건강증진센터.csv")
 protect = pd.read_csv("./data/지역별노인보호기관.csv")
 digital = pd.read_csv("./data/지역별디지털배움터.csv")
 welfare = pd.read_csv("./data/지역별노인복지시설.csv")
-leisure = pd.read_csv("./data/지역별여가및문화생활.csv ")
+leisure = pd.read_csv("./data/지역별여가및문화생활.csv")
 
 # 홈
 def home():
